@@ -1,1 +1,14 @@
-﻿<h1>My view</h1>
+﻿@model List<TaskModel>
+
+<h1>Your active task </h1>
+
+@foreach(var obj in Model)
+{
+    <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+        <div class="card-header"></div>
+        <div class="card-body">
+            <h4 class="card-title">@obj.TaskTitle</h4>
+            <p class="card-text">@obj.TaskDescription</p>
+        </div>
+    </div>
+}
