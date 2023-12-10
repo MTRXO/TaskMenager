@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using TaskMenager.Models;
+using Microsoft.EntityFrameworkCore;
 namespace TaskMenager.Data
 {
     public class ApplicationDBContext:DbContext
@@ -9,6 +10,6 @@ namespace TaskMenager.Data
             {
 
             }
-          public DbSet<Task> Tasks { get; set; }
+          public DbSet<TaskModel> Tasks { get; set; }
     }
 }
