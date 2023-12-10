@@ -9,6 +9,6 @@ namespace TaskMenager.Data
             {
 
             }
-        
+          public DbSet<Task> Tasks { get; set; }
     }
 }
