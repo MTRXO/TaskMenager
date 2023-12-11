@@ -23,3 +23,8 @@ body {
 .onmiddle{
     text-align:center;
 }
+.SmallText{
+    text-align:center;
+    font-size:small;
+
+}
