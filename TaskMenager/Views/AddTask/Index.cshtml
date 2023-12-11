@@ -1,2 +1,20 @@
-﻿
-<h1>Test</h1>
+﻿@model TaskModel
+<h1>Create New Task </h1>
+<hr />
+
+<form method="post">
+   
+    
+    <div class="form-group">
+        <label  class="form-label mt-4">Task Title </label>
+        <input asp-for="TaskTitle" type="text" class="form-control"  placeholder="Enter title ">
+        
+    </div> 
+    <div class="form-group">
+        <label  class="form-label mt-4">Task description</label>
+        <input asp-for=TaskDescription type="text" class="form-control"  autocomplete="off">
+    </div>
+    <br />
+    <button asp-controller="AddTask" class="btn btn-primary" type="submit">Create New Task </button>
+
+</form>
