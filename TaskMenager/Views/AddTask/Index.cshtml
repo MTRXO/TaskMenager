@@ -7,12 +7,14 @@
     
     <div class="form-group">
         <label  class="form-label mt-4">Task Title </label>
-        <input asp-for="TaskTitle" type="text" class="form-control"  placeholder="Enter title ">
+        <input asp-for="TaskTitle" type="text" class="form-control" autocomplete="off"  placeholder="Enter title ">
+        <span asp-validation-for="TaskTitle" class="text-danger"></span>
         
     </div> 
     <div class="form-group">
         <label  class="form-label mt-4">Task description</label>
         <input asp-for=TaskDescription type="text" class="form-control"  autocomplete="off">
+        <span asp-validation-for="TaskDescription" class="text-danger"></span>
     </div>
     <br />
     <button asp-controller="AddTask" asp-action="Create" class="btn btn-primary" type="submit"><i class="bi bi-plus-circle"></i> Create New Task </button>
