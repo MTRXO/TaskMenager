@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TaskMenager.Models;
 using TaskMenager.Data;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace TaskMenager.Controllers
 {
@@ -21,9 +22,20 @@ namespace TaskMenager.Controllers
 
         public IActionResult Create(TaskModel obj)
         {
-            _db.Tasks.Add(obj);
-            _db.SaveChanges();
-            return View("TaskReady");  
+            if (int.TryParse(obj.TaskTitle, out int result))
+            {
+                ModelState.AddModelError("TaskTitle", "Your task tittle can not consist only of numbers ");
+            }
+            if (ModelState.IsValid)
+            {
+                _db.Tasks.Add(obj);
+                _db.SaveChanges();
+                return View("TaskReady");
+            }
+
+            else return View("Index");
+            
+       
         }
 
     }
