@@ -1,26 +1,23 @@
 ﻿@model List<TaskModel>
 
 <div class="container">
-    <h1 class="onmiddle">Your active tasks </h1>
+    <h1 class="text-center">Your active tasks</h1>
     <hr />
 
     <div class="row">
         @foreach (var obj in Model.OrderBy(u => u.CreationTime))
         {
-            <div class="col-md-4">
-                <div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+            <div class="col-md-4 mb-3">
+                <div class="card border-primary" style="max-width: 20rem;">
                     <div class="card-header">@obj.TaskTitle</div>
                     <div class="card-body">
-                        <h4 class="card-title onmiddle"></h4>
-                       <p class="card-text onmiddle">@obj.TaskDescription</p>
-                       <p class="SmallText">@obj.CreationTime</p>
-                        <a asp-controller="ActiveTask" asp-action="Delete" type="submit" class="btn btn-primary onmiddle">Done</a>
-                       
-                        
+                        <p class="card-text">@obj.TaskDescription</p>
+                    </div>
+                    <div class="card-footer">
+                        <a asp-controller="" asp-action="" class="btn btn-primary">Done</a>
                     </div>
                 </div>
             </div>
-            
         }
     </div>
 </div>
