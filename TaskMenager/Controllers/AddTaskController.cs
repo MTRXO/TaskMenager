@@ -7,7 +7,7 @@ namespace TaskMenager.Controllers
 {
     public class AddTaskController : Controller
     {
-        private ApplicationDBContext _db;
+        private readonly ApplicationDBContext _db;
 
         public AddTaskController(ApplicationDBContext db)
         {
