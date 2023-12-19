@@ -18,10 +18,18 @@ namespace TaskMenager.Controllers
         {
             return View("Index");
         }
+        public bool IsNull(int? value)
+        {
+            if (value == null)
+            {
+                return true;
+            }
+            else return false;  
+        }
 
         public IActionResult Delete(int? id )
         {
-            if ( id == null || id == 0 ) return NotFound();
+            if ( IsNull(id) || id == 0 ) return NotFound();
             TaskModel model = _db.Tasks.Find(id);
             if ( model == null ) return NotFound(); 
             return View(model);
@@ -29,7 +37,7 @@ namespace TaskMenager.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirm(int? id) 
         {
-            if ( id == null) return NotFound();
+            if ( IsNull(id)) return NotFound();
             TaskModel? obj = _db.Tasks.Find(id);
             if ( obj == null ) return NotFound();
             _db.Tasks.Remove(obj);
