@@ -12,10 +12,18 @@ namespace TaskMenager.Controllers
         {
                 _db = db;
         }
+        public IActionResult TaskNotFound() 
+        {
+            return View();
+        }
 
         public IActionResult Index()
         {
             List<TaskModel> objTask = _db.Tasks.ToList(); 
+            if (objTask.Count == 0) 
+            {
+                return RedirectToAction("TaskNotFound");
+            }
             return View(objTask);
         }
     }
