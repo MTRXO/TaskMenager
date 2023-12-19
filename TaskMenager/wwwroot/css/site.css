@@ -28,3 +28,10 @@ body {
     font-size:small;
 
 }
+.AllMidlle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    margin: 0;
+}
