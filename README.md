@@ -1,1 +1,1 @@
-![Alt Text](wwwroot/Images/TaskMenagerShot.jpg)
+![Alt Text](/Images/TaskMenagerShot.jpg)
