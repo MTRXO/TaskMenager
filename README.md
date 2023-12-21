@@ -1,15 +1,15 @@
 #TaskMenager
 
-#It's a simple web app to menage you daily tasks, ypu can add or delete you task 
+#It's a simple web app to menage you daily tasks, you can add or delete your task 
 
-#techonogy used:
--asp.net 
+#Technology used:
+-Asp.net 
 -Entity Framework
 -Linq
 -SQL SERVER
--bootstrap icons
--bootswatch 
--bootstrap
+-Bootstrap icons
+-Bootswatch 
+-Bootstrap
 
 #Theme used 
 https://bootswatch.com/quartz/
