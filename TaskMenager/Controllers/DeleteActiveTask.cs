@@ -1,31 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TaskMenager.Data;
+using TaskMenager.Validation;
+
 using TaskMenager.Models;
 
 namespace TaskMenager.Controllers
 {
-    public class DeleteActiveTask : Controller
+    public class DeleteActiveTask : Controller, IValidate
     {
-
+        
 
         private readonly ApplicationDBContext _db;
 
         public DeleteActiveTask(ApplicationDBContext db)
         {
+            
             _db = db;
         }
         public IActionResult Index()
         {
             return View("Index");
         }
-        public bool IsNull(int? value)
-        {
-            if (value == null)
-            {
-                return true;
-            }
-            else return false;  
-        }
+
+       
+      
 
         public IActionResult Delete(int? id )
         {
@@ -43,6 +41,12 @@ namespace TaskMenager.Controllers
             _db.Tasks.Remove(obj);
             _db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        public bool IsNull(int? value)
+        {
+            if(value == null ) return true ;
+            else return false;
         }
     }
 }
