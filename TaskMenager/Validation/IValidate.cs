@@ -2,6 +2,6 @@
 {
     public interface IValidate
     {
-        bool IsNull(int ? value);   
+        bool IsNull(int ? value);   //test commit 
     }
 }
