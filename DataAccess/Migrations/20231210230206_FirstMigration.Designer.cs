@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using TaskMenager.Data;
+using DataAcces;
 
 #nullable disable
 
-namespace TaskMenager.Migrations
+namespace DataAcces.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
     [Migration("20231210230206_FirstMigration")]

@@ -1,11 +1,11 @@
-﻿using TaskMenager.Models;
+﻿using TaskMenagerModels;
 using Microsoft.EntityFrameworkCore;
-namespace TaskMenager.Data
+
+namespace DataAcces
 {
     public class ApplicationDBContext:DbContext
     {
-        
-        
+           
             public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options) : base(options)
             {
 

@@ -8,8 +8,11 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{B68FCA29-D02A-41CC-8912-9D964C77106C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskMenagerModels", "TaskMenagerModels\TaskMenagerModels.csproj", "{D8181693-2A87-4067-99ED-3688FA931180}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9F753FC7-9297-4EB2-9376-B5A0F87E6B90} = {9F753FC7-9297-4EB2-9376-B5A0F87E6B90}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskMenagerUtility", "TaskMenagerUtility\TaskMenagerUtility.csproj", "{B4A1F0BE-5C74-4621-8C2B-0229FE323027}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskMenagerUtility", "TaskMenagerUtility\TaskMenagerUtility.csproj", "{B4A1F0BE-5C74-4621-8C2B-0229FE323027}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

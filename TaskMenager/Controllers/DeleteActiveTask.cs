@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TaskMenager.Data;
+using DataAcces;
 using TaskMenager.Validation;
 
-using TaskMenager.Models;
+using TaskMenagerModels;
 
 namespace TaskMenager.Controllers
 {

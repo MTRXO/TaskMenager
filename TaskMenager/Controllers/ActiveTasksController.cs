@@ -1,6 +1,6 @@
-﻿using TaskMenager.Models;
+﻿using TaskMenagerModels;
 using Microsoft.AspNetCore.Mvc;
-using TaskMenager.Data;
+using DataAcces;
 
 namespace TaskMenager.Controllers
 {

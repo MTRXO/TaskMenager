@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TaskMenager.Models;
-using TaskMenager.Data;
+using TaskMenagerModels;
+using DataAcces;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace TaskMenager.Controllers

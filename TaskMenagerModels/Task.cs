@@ -1,6 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace TaskMenager.Models
+namespace TaskMenagerModels
 {
     public class TaskModel
     {
@@ -12,6 +17,6 @@ namespace TaskMenager.Models
         [Required]
         [MaxLength(150)]
         public string TaskDescription { get; set; }
-        public DateTime CreationTime { get; set; } = DateTime.Now;  
+        public DateTime CreationTime { get; set; } = DateTime.Now;
     }
 }
