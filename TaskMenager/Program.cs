@@ -1,11 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using DataAcces;
+using DataAccess.Repository.Validation;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IValidation, Valdation>();
 
 var app = builder.Build();
 

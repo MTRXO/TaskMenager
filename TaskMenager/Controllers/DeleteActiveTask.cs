@@ -1,22 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using DataAcces;
-using TaskMenager.Validation;
-
 using TaskMenagerModels;
+using DataAccess.Repository.Validation;
 
 namespace TaskMenager.Controllers
 {
-    public class DeleteActiveTask : Controller, IValidate
+    public class DeleteActiveTask : Controller
     {
         
 
         private readonly ApplicationDBContext _db;
+        private readonly IValidation _validation;
 
-        public DeleteActiveTask(ApplicationDBContext db)
+        public DeleteActiveTask(ApplicationDBContext db, IValidation validation)
         {
-            
+            _validation = validation;
             _db = db;
         }
+        
         public IActionResult Index()
         {
             return View("Index");
@@ -27,7 +28,7 @@ namespace TaskMenager.Controllers
 
         public IActionResult Delete(int? id )
         {
-            if ( IsNull(id) || id == 0 ) return NotFound();
+            if ( _validation.IsNullOrEmpty(id) || id == 0 ) return NotFound();
             TaskModel model = _db.Tasks.Find(id);
             if ( model == null ) return NotFound(); 
             return View(model);
@@ -35,7 +36,7 @@ namespace TaskMenager.Controllers
         [HttpPost, ActionName("Delete")]
         public IActionResult DeleteConfirm(int? id) 
         {
-            if ( IsNull(id)) return NotFound();
+            if (_validation.IsNullOrEmpty(id)) return NotFound();
             TaskModel? obj = _db.Tasks.Find(id);
             if ( obj == null ) return NotFound();
             _db.Tasks.Remove(obj);
@@ -43,10 +44,6 @@ namespace TaskMenager.Controllers
             return RedirectToAction("Index");
         }
 
-        public bool IsNull(int? value)
-        {
-            if(value == null ) return true ;
-            else return false;
-        }
+      
     }
 }
