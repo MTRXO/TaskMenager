@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,9 +11,11 @@ namespace DataAccess.Repository.DbOperations
     {
         IEnumerable<T> GetAll();
         void Add(T entity);
-        void Updater(T entity);
+        void Update(T entity);
         void Delete(T entity);
         void RemoveRange (IEnumerable<T> entity);
+        T Get(Expression<Func<T, bool>> filter);
+        
         
     }
 }
