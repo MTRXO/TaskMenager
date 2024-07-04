@@ -2,16 +2,17 @@
 using TaskMenagerModels;
 using DataAcces;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
+using DataAccess.Repository.DbOperations;
 
 namespace TaskMenager.Controllers
 {
     public class AddTaskController : Controller
     {
-        private readonly ApplicationDBContext _db;
+        private readonly IDbOperations<TaskModel> _operation;
 
-        public AddTaskController(ApplicationDBContext db)
+        public AddTaskController(IDbOperations<TaskModel> operation)
         {
-            _db = db;
+            _operation = operation;
         }
         public IActionResult Index()
         {
@@ -28,8 +29,8 @@ namespace TaskMenager.Controllers
             }
             if (ModelState.IsValid)
             {
-                _db.Tasks.Add(obj);
-                _db.SaveChanges();
+                _operation.Add(obj);
+                _operation.SaveChanges();
                 return View("TaskReady");
             }
 

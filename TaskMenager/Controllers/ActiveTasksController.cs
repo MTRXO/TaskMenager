@@ -1,16 +1,17 @@
 ﻿using TaskMenagerModels;
 using Microsoft.AspNetCore.Mvc;
 using DataAcces;
+using DataAccess.Repository.DbOperations;
 
 namespace TaskMenager.Controllers
 {
     public class ActiveTasksController : Controller
     {
-        private readonly ApplicationDBContext _db;
+        private readonly IDbOperations<TaskModel> _operation;
 
-        public ActiveTasksController(ApplicationDBContext db)
+        public ActiveTasksController(IDbOperations<TaskModel> operation)
         {
-                _db = db;
+                _operation = operation;
         }
         public IActionResult TaskNotFound() 
         {
@@ -19,7 +20,7 @@ namespace TaskMenager.Controllers
 
         public IActionResult Index()
         {
-            List<TaskModel> objTask = _db.Tasks.ToList(); 
+            List<TaskModel> objTask = _operation.GetAll().ToList();
             if (objTask.Count == 0) 
             {
                 return RedirectToAction("TaskNotFound");

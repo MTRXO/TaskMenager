@@ -47,6 +47,11 @@ namespace DataAccess.Repository.DbOperations
             _dbSet.RemoveRange(entity);
         }
 
+        public void SaveChanges()
+        {
+            _db.SaveChanges();
+        }
+
         public void Update(T entity)
         {
             _dbSet.Update(entity);

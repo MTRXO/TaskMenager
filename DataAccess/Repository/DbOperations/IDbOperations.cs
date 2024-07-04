@@ -15,6 +15,11 @@ namespace DataAccess.Repository.DbOperations
         void Delete(T entity);
         void RemoveRange (IEnumerable<T> entity);
         T Get(Expression<Func<T, bool>> filter);
+        void SaveChanges();
+
+
+
+
         
         
     }
