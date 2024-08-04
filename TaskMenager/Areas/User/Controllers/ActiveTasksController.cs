@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using DataAcces;
 using DataAccess.Repository.DbOperations;
 
-namespace TaskMenager.Controllers
+namespace TaskMenager.Areas.User.Controllers
 {
     public class ActiveTasksController : Controller
     {
@@ -11,9 +11,9 @@ namespace TaskMenager.Controllers
 
         public ActiveTasksController(IDbOperations<TaskModel> operation)
         {
-                _operation = operation;
+            _operation = operation;
         }
-        public IActionResult TaskNotFound() 
+        public IActionResult TaskNotFound()
         {
             return View();
         }
@@ -21,7 +21,7 @@ namespace TaskMenager.Controllers
         public IActionResult Index()
         {
             List<TaskModel> objTask = _operation.GetAll().ToList();
-            if (objTask.Count == 0) 
+            if (objTask.Count == 0)
             {
                 return RedirectToAction("TaskNotFound");
             }

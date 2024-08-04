@@ -4,7 +4,7 @@ using DataAcces;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using DataAccess.Repository.DbOperations;
 
-namespace TaskMenager.Controllers
+namespace TaskMenager.Areas.User.Controllers
 {
     public class AddTaskController : Controller
     {
@@ -16,7 +16,7 @@ namespace TaskMenager.Controllers
         }
         public IActionResult Index()
         {
-            return View(); 
+            return View();
         }
 
         [HttpPost]
@@ -35,8 +35,8 @@ namespace TaskMenager.Controllers
             }
 
             else return View("Index");
-            
-       
+
+
         }
 
     }

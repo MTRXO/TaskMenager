@@ -3,7 +3,7 @@ using System.Diagnostics;
 using TaskMenagerModels;
 
 
-namespace TaskMenager.Controllers
+namespace TaskMenager.Areas.User.Controllers
 {
     public class HomeController : Controller
     {
